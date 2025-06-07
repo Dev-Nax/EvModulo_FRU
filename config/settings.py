@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 
+from django import db
+
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -112,11 +114,19 @@ def get_db_config(environ_var='DATABASE_URL'):
 
     return options
 
-
 DATABASES = {
-    'default': get_db_config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'pos_db',
+        'USER': 'asauser@evfrupos-db',
+        'PASSWORD': '#FRU2003',
+        'HOST': 'evfrupos-db.postgres.database.azure.com',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
+    }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
