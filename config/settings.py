@@ -35,7 +35,16 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG', default=True)
 
-ALLOWED_HOSTS = ['evfruasa.duckdns.org']
+# Para que Django confíe en el header X-Forwarded-Proto
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Lista de dominios permitidos
+ALLOWED_HOSTS = ['evfruasa.duckdns.org', 'localhost', '127.0.0.1']
+
+# Asegúrate de que CSRF_TRUSTED_ORIGINS incluya tu dominio con esquema
+CSRF_TRUSTED_ORIGINS = [
+    'https://evfruasa.duckdns.org',
+]
 
 # Application definition
 
