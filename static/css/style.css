@@ -1,15 +1,26 @@
+:root {
+  --puce: #d496a7;
+  --redwood: #9d695a;
+  --tiffany-blue: #78e0dc;
+  --electric-blue: #8eedf7;
+  --light-sky-blue: #a1cdf1;
+}
+
 .author {
     text-decoration: none !important;
+    color: #9d695a; /* redwood */
 }
 
 .img-sm {
     max-width: 30px;
     margin-right: 10px;
+    border-radius: 50%; /* estilo circular */
+    border: 2px solid #d496a7; /* puce */
 }
 
 .table thead tr {
-    background-color: #e6e4e4 !important;
-    color: #000000 !important;
+    background-color: #a1cdf1 !important; /* light sky blue */
+    color: #9d695a !important; /* redwood */
 }
 
 .table thead th {
@@ -24,10 +35,18 @@
     vertical-align: middle;
     position: relative;
     top: -1px;
+    accent-color: #78e0dc; /* tiffany blue */
 }
 
 .btn {
-    border-radius: 0 !important;
+    border-radius: 0.375rem !important;
+    background-color: #d496a7; /* puce */
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #9d695a; /* redwood */
 }
 
 .dropdown-menu-lg {
@@ -35,22 +54,32 @@
     min-width: 280px;
     padding: 0;
     font-size: 0.90rem;
+    background-color: #8eedf7; /* electric blue */
+    border: 1px solid #78e0dc;
 }
 
 .dropdown-menu-lg .dropdown-item {
     cursor: pointer;
+    padding: 0.75rem 1rem;
+    color: #9d695a;
+}
+.dropdown-menu-lg .dropdown-item:hover {
+    background-color: #a1cdf1;
 }
 
 .breadcrumb {
-    background-color: #f7f7f7;
-    padding: 0.75rem 1rem;
-    border-radius: 0.25rem;
-    margin-bottom: 1rem;
-    border: 1px solid #dbd7d7;
+    background-color: #a1cdf1; 
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 .breadcrumb a {
-    color: #212529 !important;
+    color: #ffffff !important;
+    text-decoration: underline;
 }
 
 .loading {
@@ -61,4 +90,9 @@
     position: absolute;
     top: 36%;
     width: 100%;
+    color: #9d695a;
+}
+
+.bg-custom-navbar {
+  background-color: var(--puce) !important;
 }
