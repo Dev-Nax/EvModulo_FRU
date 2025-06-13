@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-
 from django import db
 
 import environ
@@ -123,19 +122,6 @@ def get_db_config(environ_var='DATABASE_URL'):
 
     return options
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pos_db',
-        'USER': 'asauser',
-        'PASSWORD': '#FRU2003',
-        'HOST': 'evfrupos-db.postgres.database.azure.com',
-        'PORT': '5432',
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
-    }
-}
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -215,16 +201,15 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-from decouple import config
-
+  
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT', default='5432'),
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT', default='5432'),
         'OPTIONS': {
             'sslmode': 'require',
         },

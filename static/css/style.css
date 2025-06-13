@@ -8,7 +8,7 @@
 
 .author {
     text-decoration: none !important;
-    color: #9d695a; /* redwood */
+    color: #a1cdf1; /* redwood */
 }
 
 .img-sm {
@@ -20,7 +20,7 @@
 
 .table thead tr {
     background-color: #a1cdf1 !important; /* light sky blue */
-    color: #9d695a !important; /* redwood */
+    color: #f5f5f5 !important; /* redwood */
 }
 
 .table thead th {
@@ -35,7 +35,7 @@
     vertical-align: middle;
     position: relative;
     top: -1px;
-    accent-color: #78e0dc; /* tiffany blue */
+    accent-color: #a1cdf1; /* tiffany blue */
 }
 
 .btn {
@@ -46,7 +46,7 @@
     transition: background-color 0.3s ease;
 }
 .btn:hover {
-    background-color: #9d695a; /* redwood */
+    background-color: #a1cdf1; 
 }
 
 .dropdown-menu-lg {

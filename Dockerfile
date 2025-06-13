@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
 # Crear directorio de trabajo
 WORKDIR /app
 
+COPY .env /app/.env
+
 # Copiar requerimientos e instalar
 COPY deploy/txt/requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip && pip install -r requirements.txt
